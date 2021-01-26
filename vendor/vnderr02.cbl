@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. VNDERR01.
+       PROGRAM-ID. VNDERR02.
       *---------------------------------------------------
       * Forces an error by reading past the end of a file.
       *---------------------------------------------------
