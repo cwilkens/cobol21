@@ -2,15 +2,16 @@
        PROGRAM-ID. STCRPT02.
       *--------------------------------------------
       * Report on the STATE File.
+      * (displays to screen instead of printing)
       *--------------------------------------------
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
 
            COPY "slstate.cbl".
-      * DISPLAY instead of PRINTER for testing
+      
            SELECT PRINTER-FILE
-               ASSIGN TO DISPLAY
+               ASSIGN TO PRINTER
                ORGANIZATION IS LINE SEQUENTIAL.
 
        DATA DIVISION.
@@ -76,12 +77,12 @@
            
        OPENING-PROCEDURE.
            OPEN I-O STATE-FILE.
-           OPEN OUTPUT PRINTER-FILE.
+      *     OPEN OUTPUT PRINTER-FILE.
 
        CLOSING-PROCEDURE.
            CLOSE STATE-FILE.
            PERFORM END-LAST-PAGE.
-           CLOSE PRINTER-FILE.
+      *     CLOSE PRINTER-FILE.
 
        PRINT-STATE-FIELDS.
            IF LINE-COUNT > MAXIMUM-LINES
@@ -101,7 +102,8 @@
                AT END MOVE "Y" TO FILE-AT-END.
 
        WRITE-TO-PRINTER.
-           WRITE PRINTER-RECORD BEFORE ADVANCING 1.
+      *     WRITE PRINTER-RECORD BEFORE ADVANCING 1.
+           DISPLAY PRINTER-RECORD.
            ADD 1 TO LINE-COUNT.
 
        LINE-FEED.
@@ -129,4 +131,5 @@
 
        FORM-FEED.
            MOVE SPACE TO PRINTER-RECORD.
-           WRITE PRINTER-RECORD BEFORE ADVANCING PAGE.
+      *     WRITE PRINTER-RECORD BEFORE ADVANCING PAGE.
+           DISPLAY PRINTER-RECORD.
