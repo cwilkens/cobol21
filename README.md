@@ -1,6 +1,6 @@
 This is a repository of select code written from the book "Teach Yourself COBOL in 21 Days", Third Edition (published 1999).
 
-This code was compiled and tested using the free Micro Focus "Visual COBOL for Visual Studio Personal Edition" product, which includes a command line compiler. The code was written in VS Code )with a COBOL extension) and compiled and ran from the command line.
+This code was compiled and tested using the free Micro Focus "Visual COBOL for Visual Studio Personal Edition" product, which includes a command line compiler. The code was written in VS Code (with a COBOL extension) and compiled and ran from the command line.
 
 To compile and link, launch the "Visual COBOL Command Prompt" after setting up Visual COBOL.
 
